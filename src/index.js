@@ -1,14 +1,9 @@
-/*
-Your task
-In your project, when a user searches for a city (example: New York), it should display: 
-1) the name of the city on the result page 
-2) and the current temperature of the city.
 
-Please note: there's no need to include a temperature conversion at the moment. This will be taught later on in the course.
+/* Improve the project including the search engine, API integration, unit conversion, wind speed, weather description, 
+and weather icon are mandatory. The project should not include the forecast yet.
 
-🙀 Bonus point:
-Add a Current Location button. When clicking on it, it uses the Geolocation API to get your GPS coordinates and display 
-and the city and current temperature using the OpenWeather API.*/
+Host your project on Netlfiy, and at the bottom of your page, link to your GitHub repository.
+*/
 
 function formatDate(date) {
   let hours = date.getHours();
@@ -26,14 +21,15 @@ function formatDate(date) {
 }
 
 function showTemperature(response) {
-  console.log(response.data);
+  celciusTemperature = response.data.main.temp;
   document.querySelector("#city").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(response.data.main.temp); 
+  document.querySelector("#temperature").innerHTML = Math.round(celciusTemperature); 
   document.querySelector("#min_degrees").innerHTML = Math.round(response.data.main.temp_min);
   document.querySelector("#max_degrees").innerHTML = Math.round(response.data.main.temp_max);
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
   document.querySelector("#description").innerHTML = response.data.weather[0].main;
+  document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
 }
 
 function searchCity(city) {
@@ -63,15 +59,18 @@ function getCurrentLocation(event) {
 function convertToFahrenheit(event) {
   event.preventDefault();
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = 66;
-  //Math.round((temperature * 9) / 5 + 32);
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
+  let fahrenheitTemperature = (celciusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+  
 }
 function convertToCelsius(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperatureElement = document.querySelector("#temperature");
-  let temperature = temperatureElement.innerHTML;
-  temperatureElement.innerHTML = 19;
+  temperatureElement.innerHTML = Math.round(celciusTemperature);
 } 
 
 let dateElement = document.querySelector("#today");
@@ -87,12 +86,12 @@ celsiusLink.addEventListener("click", convertToCelsius);
 let searchForm = document.querySelector("#search-form");
 searchForm.addEventListener("submit", handleSubmit); 
 
-searchCity("Kyiv");
-
 let cityElement = document.querySelector("#city");
 let cityInput = document.querySelector("#city-input");
 
 let currentLocationButton = document.querySelector("#current-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
+let celciusTemperature = null;
 
+searchCity("Kyiv");
