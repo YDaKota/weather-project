@@ -5,6 +5,7 @@
     max-width: 1100px;
     font-family: Montserrat;
     margin-top: 25px;
+    
 }
 header {
     text-align: right;
@@ -41,7 +42,7 @@ header {
     align-items: right;
 }
 .current {
-    margin-left: 48px;
+    margin-left: 50px;
     margin-top: 25px;
 }
 
@@ -55,27 +56,29 @@ header {
     font-size: 45px;
 }
 
-.degrees {
+.forecast {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+.weather-forecast-date, .weather-forecast-temperatures {
     font-weight: bold;
     text-align: center;
-    font-size: 28px;
+    font-size: 25px;
+    
 }
+.weather-forecast-temperatures {
+    margin-bottom: 35px;
+}
+
 li {
     list-style-type: none; 
     text-align: left;
 }
 ul {
     padding-left: 0px;
-}
-
-.card-title {
-    text-align: center;
-    margin-bottom: 13px;
-}
-
-.forecast {
-    display: flex;
-    justify-content: center;
 }
 
 .units {
@@ -98,3 +101,4 @@ ul {
     margin-left: 220px;
     font-weight: bold;
 }
+

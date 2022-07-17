@@ -22,65 +22,34 @@
         </form>
         </header>
         <div class="current">
-            <h1 class="current__city">Weather in <span id="city">Kyiv</span></h1>
+            <h1 class="current__city">Weather in <span id="city"></span></h1>
             <div class="row">
                 <div class="col-3">
-                    <h2 class="today" id="today">Today</h2>
+                    <h2 class="today" id="today"></h2>
                     <h3 class="current__temperature">
-                        <span id="temperature">19</span> 
+                        <span id="temperature"></span> 
                         <span class="units">
                             <a href="#" id="celsius-link" class="active">°C</a>
                             |
                             <a href="#" id="fahrenheit-link">°F</a>
                         </span>
                     </h3>
-                    <div class="current__description" id="description">clearly</div>
+                    <div class="current__description" id="description"></div>
                     <img src="images/sunny_FILL0_wght400_GRAD0_opsz48.svg" id="icon" alt="icon">
                 </div>
                 <div class="col-3">
-                    <h3 class="min__temperature">min: <span id="min_degrees">17°C</span></h3>
-                    <h3 class="max__temperature">max: <span id="max_degrees">25°C</span></h3>
+                    <h3 class="min__temperature">min: <span id="min_degrees"></span></h3>
+                    <h3 class="max__temperature">max: <span id="max_degrees"></span></h3>
                     <ul>
-                        <li>Humidity: <span id="humidity">77</span>%</li>
-                        <li>Wind: <span id="wind">8</span> km/h</li>
+                        <li>Humidity: <span id="humidity"></span>%</li>
+                        <li>Wind: <span id="wind"></span> km/h</li>
                     </ul>
 
                 </div>
                 <div class="col-6"></div>
             </div>
         </div>
-        <br>
-        <div class="row forecast">
-            <div class="col-2">
-                <h5 class="card-title">Monday</h5>
-                <img src="images/cloudy_FILL0_wght400_GRAD0_opsz48.svg" class="card-img-top" alt="forecast icon">
-                <p class="degrees">25°C</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <div class="col-2">
-                <h5 class="card-title">Tuesday</h5>
-                <img src="images/partly_cloudy_day_FILL0_wght400_GRAD0_opsz48.svg" class="card-img-top" alt="forecast icon">
-                <p class="degrees">28°C</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <div class="col-2">
-                <h5 class="card-title">Wednesday</h5>
-                <img src="images/rainy_FILL0_wght400_GRAD0_opsz48.svg" class="card-img-top" alt="forecast icon">
-                <p class="degrees">21°C</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <div class="col-2">
-                <h5 class="card-title">Thursday</h5>
-                <img src="images/sunny_FILL0_wght400_GRAD0_opsz48.svg" class="card-img-top" alt="forecast icon">
-                <p class="degrees">27°C</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
-            <div class="col-2">
-                <h5 class="card-title">Friday</h5>
-                <img src="images/cloudy_FILL0_wght400_GRAD0_opsz48.svg" class="card-img-top" alt="forecast icon">
-                <p class="degrees">30°C</p>
-                <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-            </div>
+        <div class="row forecast" id="forecast">
         </div>
     </div>
     <small class="footer">
