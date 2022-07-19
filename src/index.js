@@ -2,9 +2,13 @@
 Improve the project you've worked on and implement all features not yet implemented. Search engine, API integration, 
 wind speed, weather description, and weather icon are mandatory. The forecast and unit conversion are optional but 
 everything that’s included in your code should be fully working (no fake data).
-
 Host your project on Netlfiy, and at the bottom of your page, link to your GitHub repository.
 
+
+Your solution doesn’t meet the requirements because
+
+Selecting ºF and searching for a new city will give the temperature in ºC, but the ºF link remains selected/active 
+providing incorrect information.
 */
 
 function formatDate(date) {
@@ -91,6 +95,8 @@ function searchCity(city) {
 function handleSubmit(event) {
   event.preventDefault();
   let city = document.querySelector("#city-input").value;
+  fahrenheitLink.classList.remove("active");
+  celsiusLink.classList.add("active");
   searchCity(city);
 }
 
